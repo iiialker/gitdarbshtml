@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #333;
+            margin: 0 0 30px 0;
+        }
+        
+        .score-display {
+            font-size: 36px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .click-btn {
+            width: 150px;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.1s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .click-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .click-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .reset-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .reset-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .buy-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .score-info {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clicker Game</h1>
+        <div class="score-display" id="score">0</div>
+        <div class="score-info">Click power: <span id="power">1</span></div>
+        <button class="click-btn" id="clickBtn">Click!</button>
+        <br>
+        <button class="buy-btn" id="buyBtn">Buy +1 Power (500)</button>
+        <button class="reset-btn" id="resetBtn">Reset</button>
+    </div>
+
+    <script>
+        let score = 0;
+        let clickPower = 1;
+        const scoreDisplay = document.getElementById('score');
+        const powerDisplay = document.getElementById('power');
+        const clickBtn = document.getElementById('clickBtn');
+        const buyBtn = document.getElementById('buyBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        clickBtn.addEventListener('click', () => {
+            score += clickPower;
+            if (Math.random() < 1 / 200) {
+                score += 300;
+                alert('Lucky click! +300 points!');
+            }
+            scoreDisplay.textContent = score;
+        });
+
+        buyBtn.addEventListener('click', () => {
+            if (score >= 500) {
+                score -= 500;
+                clickPower += 1;
+                scoreDisplay.textContent = score;
+                powerDisplay.textContent = clickPower;
+            } else {
+                alert('Need 500 points to buy +1 power.');
+            }
+        });
+
+        resetBtn.addEventListener('click', () => {
+            score = 0;
+            clickPower = 1;
+            scoreDisplay.textContent = score;
+            powerDisplay.textContent = clickPower;
+        });
+    </script>
+</body>
+</html>
