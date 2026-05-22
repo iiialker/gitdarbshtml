@@ -1,0 +1,90 @@
+body {
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        h1 {
+            color: #333;
+            margin: 0 0 30px 0;
+        }
+        
+        .score-display {
+            font-size: 36px;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        
+        .click-btn {
+            width: 150px;
+            height: 150px;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.1s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .click-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .click-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .reset-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .reset-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .buy-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .score-info {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #444;
+        }
