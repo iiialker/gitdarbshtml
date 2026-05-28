@@ -45,10 +45,12 @@ body {
         
         .click-btn:hover {
             transform: scale(1.05);
+            transition: transform 0.1s;
         }
         
         .click-btn:active {
             transform: scale(0.95);
+            transition: transform 0.1s;
         }
         
         .reset-btn {
@@ -61,10 +63,17 @@ body {
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            transition: transform 0.1s;
         }
         
         .reset-btn:hover {
             background-color: #c0392b;
+            transition: transform 0.1s;
+            transform: scale(1.05);
+        }
+
+        .reset-btn:active {
+            transform: scale(0.95);
         }
 
         .buy-btn {
@@ -77,14 +86,44 @@ body {
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            transition: transform 0.1s;
         }
 
         .buy-btn:hover {
             background-color: #27ae60;
+            transition: transform 0.1s;
+            transform: scale(1.05);
+        }
+
+        .buy-btn:active {
+            transition: transform 0.1s;
+            transform: scale(0.95);
         }
 
         .score-info {
             margin: 0 0 15px 0;
             font-size: 18px;
             color: #444;
+        }
+        .boba-btn {
+            margin-top: 5;
+            padding: 10px 80px;
+            font-size: 16px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            transition: transform 0.1s;
+        }
+
+        .boba-btn:active {
+            transform: scale(0.95);
+            transition: transform 0.1s;
+        }
+
+        .boba-btn:hover {
+            transform: scale(1.05);
+            transition: transform 0.1s;
         }
